@@ -1,0 +1,79 @@
+.mypage{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+    width: 70%;
+    justify-content: space-between;
+    margin: 50px auto;
+}
+
+@media (max-width: 768px) {
+    .mypage {
+        width: 100%;
+    }
+}
+
+.mypage-inner{
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.mypage__image{
+    border-radius: 50%;
+    width: 80px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.mypage__user-name{
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.mypage__link {
+    color: #FF5555;
+    border: solid 2px #FF5555;
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.page-link__group {
+    margin-top: 30px;
+    border-bottom: 2px solid #5F5F5F;
+    height: 50px;
+}
+
+.page-link {
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 140px;
+    color: #5F5F5F;
+    text-decoration: none;
+}
+
+.page-link.active {
+    color: #FF0000;
+}
+
+.item-list {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.item-card {
+    width: 21%;
+    margin: 30px 20px;
+}
+
+.item-card__name {
+    font-size: 20px;
+    margin-top: 0px;
+}   

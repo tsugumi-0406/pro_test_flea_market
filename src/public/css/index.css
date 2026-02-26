@@ -1,0 +1,65 @@
+.page-link{
+    border-bottom: 2px solid #5F5F5F;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.tab-link{
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 140px;
+    color: #5F5F5F; 
+    text-decoration: none;
+}
+
+.tab-link.active {
+    color: #FF0000;
+}
+
+.recomendation-list{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.mylist-list{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .main-inner {
+        width: 95%;
+    }
+}
+
+.item-card{
+    width: 21%;
+    margin: 30px 20px;
+}
+
+@media (max-width: 768px) {
+    .item-card {
+        width: 15%;
+    }
+}
+
+.item-link{
+    text-decoration: none;
+    color: black;
+}
+
+.sold-label{
+    color: #FF0000;
+    font-size: 40px;
+}
+
+.item-card__name{
+    font-size: 20px;
+    margin-top: 0px;
+}

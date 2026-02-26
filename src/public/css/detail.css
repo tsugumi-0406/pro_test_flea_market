@@ -1,0 +1,164 @@
+.main-inner{
+    width: 90%;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-image{
+    width: 45%;
+    margin-top: 40px;
+}
+
+.main-sentence{
+    width: 45%;
+}
+
+.main-sentence__name{
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.main-sentence__brand{
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.main-sentence__price{
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.main-sentence__price__little{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.main-sentence__count{
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+    margin-left: 80px;
+    font-size: 40px;
+}
+
+.count-num{
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.comment-count{
+    margin-left: 40px;
+}
+
+.count-comment{
+    margin-top: 0px;
+}
+
+.main-sentence_title{
+    font-size: 35px;
+}
+
+.main-sentence__link-sell{
+    display: block;
+    width: 100%;
+    height: 55px;
+    background-color: #FF5555;
+    border: none;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+}
+
+.main-sentence__condition{
+    display: flex;
+    margin: 10px 0;
+}
+
+.main-sentence__label{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.main-sentence__condition-content{
+    font-size: 20px;
+    padding: 2px 40px;
+    margin-left: 40px;
+}
+
+.comment__title{
+    color: #5F5F5F;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.main-sentence__category{
+    display: flex;
+    margin: 10px 0;
+}
+
+.main-sebtebce__category-name{
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 2px 20px;
+    margin: auto auto auto 80px;
+}
+
+.comment__sentence{
+    background-color: #E5E5E5;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.comment-form{
+    margin-top: 30px;
+}
+
+.comment-form__label{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.comment__userdata{
+    display: flex;  
+}
+
+.userdata__image{
+    width: 30%;
+    height: auto;
+}
+
+.comment__user-name{
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 80px;
+}
+
+.comment-form__text{
+    width: 100%;
+    height: 200px;
+}
+
+.comment-form__Error{
+    color: red;
+}
+
+.comment-form__submit{
+    width: 100%;
+    height: 55px;
+    background-color: #FF5555;
+    border: none;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.text-red-500{
+    color: red;
+}
