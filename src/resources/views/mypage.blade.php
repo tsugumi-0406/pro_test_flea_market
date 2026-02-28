@@ -15,6 +15,12 @@
     <div class="page-link__group">
         <a href="/mypage?page=sell" class="page-link {{ $page === 'sell' ? 'active' : '' }}">出品した商品</a>
         <a href="/mypage?page=buy" class="page-link {{ $page === 'buy' ? 'active' : '' }}">購入した商品</a>
+        <a href="/mypage?page=trading" class="page-link {{ $page === 'trading' ? 'active' : '' }}">取引中の商品</a>
+        @if($unread_count > 0)
+            <span class="badge">
+                {{ $unread_count }}
+            </span>
+        @endif
     </div>
 
 @if($page === 'sell')
@@ -35,6 +41,23 @@
                     <a href="/item/{$item_id}" class="item-link"></a>
                     <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像" class="img-content" width=100%/>
                     <p class="item-card__name">{{$item->name}}</p>
+                </div>
+            @endforeach
+        </div>
+    @endauth
+@elseif($page === 'trading')
+    @auth
+        <div class="item-list" id="pageContent02">
+            @foreach($trading as $order)
+                <div class="item-card">
+                    <a href="/chat/{$order_id}" class="item-link"></a>
+                    <img src="{{ asset('storage/' . $order->item->image) }}" alt="商品画像" class="img-content" width=100%/>
+                    <p class="item-card__name">{{$order->item->name}}</p>
+                    @if($order->unread_count > 0)
+                        <span class="badge">
+                            {{ $order->unread_count }}
+                        </span>
+                    @endif
                 </div>
             @endforeach
         </div>
