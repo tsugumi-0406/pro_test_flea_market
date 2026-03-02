@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ChatController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -37,6 +38,9 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', '認証メールを再送しました！');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/purchase/{item_id}', [ItemController::class, 'purchase'])->name('item.purchase');
 
@@ -70,5 +74,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/comment', [ItemController::class, 'comment']);
 
     Route::post('/items/{item_id}/like', [ItemController::class, 'like'])->name('like');
+
+    Route::get('/chat/{order_id}', [ChatController::class, 'chat']);
+
+    Route::post('/chat/send', [ChatController::class, 'send']);
+
+    Route::post('/chat/update', [ChatController::class, 'update']);
+
+    Route::post('/chat/delete', [ChatController::class, 'delete']);
 });
 

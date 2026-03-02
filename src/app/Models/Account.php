@@ -24,4 +24,9 @@ class Account extends Model
     public function likes() {
         return $this->hasMany(Like::class, 'account_id');
     }
+
+    public function messages() {
+        return $this->hasMany(Like::class, 'account_id');
+    }
 }
+    

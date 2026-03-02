@@ -20,6 +20,10 @@ class CreateOrdersTable extends Migration
             $table->string('method');
             $table->string('post_code');
             $table->string('address');
+            $table->string('status');
+            $table->time('buyer_last_read_at')->nullable();
+            $table->time('seller_last_read_at')->nullable();
+            $table->time('last_message_at')->nullable();
             $table->timestamps();
         });
     }

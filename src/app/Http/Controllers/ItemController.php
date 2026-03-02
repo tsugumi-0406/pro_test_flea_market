@@ -109,9 +109,10 @@ class ItemController extends Controller
         Order::create([
             'item_id'    => $request->item_id,
             'account_id' => $account->id,
-            'method'     => 'stripe',
+            'method' => 'stripe',
             'post_code' => $request->post_code,
             'address' => $request->address,
+            'status' => 'trading',
         ]);
         return redirect('/');
     }

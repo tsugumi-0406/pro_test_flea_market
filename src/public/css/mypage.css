@@ -60,6 +60,17 @@
     color: #FF0000;
 }
 
+.badge{
+    display: inline-block;
+    background-color: #FF0000;
+    border-radius: 50%;
+    color: #FFFFFF;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
 .item-list {
     width: 90%;
     margin: auto;
@@ -71,9 +82,24 @@
 .item-card {
     width: 21%;
     margin: 30px 20px;
+    position: relative;
 }
 
 .item-card__name {
     font-size: 20px;
     margin-top: 0px;
-}   
+} 
+
+.item-badge {
+    display: inline-block;
+    background-color: #FF0000;
+    border-radius: 50%;
+    color: #FFFFFF;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-weight: 700;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
