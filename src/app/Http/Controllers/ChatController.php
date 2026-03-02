@@ -33,6 +33,7 @@ class ChatController extends Controller
             $status = 'seller';
         }
 
+        // サイドバー用の取引中情報の取得
         $trading_buy_orders = Order::where('status', 'trading')
                         ->where('account_id', $account->id)
                         ->with('item')->get();
@@ -45,10 +46,16 @@ class ChatController extends Controller
                         ->concat($trading_sell_orders)
                         ->unique('id')
                         ->sortByDesc('last_message_at');
+
+        // チャットのメッセージの取得
+        $messages = Message::with('sender')
+                ->where('order_id', $order_id)
+                ->get();
         
-        return view('chat', compact('order', 'tradings', 'status'));
+        return view('chat', compact('order', 'tradings', 'status', 'messages', 'account'));
     }
 
+    // メッセージを送信する
     public function send(ChatRequest $request){
         $user = Auth::user();
         $account = \App\Models\Account::where('user_id', $user->id)->first();

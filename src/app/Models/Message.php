@@ -9,4 +9,9 @@ class Message extends Model
 {
     use HasFactory;
     protected $fillable = ['order_id', 'send_account_id', 'message', 'image'];
+
+    public function sender()
+    {
+        return $this->belongsTo(Account::class, 'send_account_id');
+    }
 }

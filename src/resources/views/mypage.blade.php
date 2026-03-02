@@ -57,7 +57,7 @@
                     </a>
                     <p class="item-card__name">{{$order->item->name}}</p>
                     @if($order->unread_count > 0)
-                        <span class="badge">
+                        <span class="item-badge">
                             {{ $order->unread_count }}
                         </span>
                     @endif

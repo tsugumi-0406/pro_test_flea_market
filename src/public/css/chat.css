@@ -80,6 +80,39 @@
     font-weight: 400;
 }
 
+.myself{
+    text-align: right;
+}
+
+.chat__account-partner{
+    display: flex;
+}
+
+.chat__account-myself {
+    display: flex;
+}
+
+.partner-icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.myself-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto 10px auto 0px;
+}
+.myself-name {
+    margin: auto 10px auto auto;
+}
+
+.partner-message, .myself-message{
+    background-color: #D9D9D9;
+    display: inline-block;
+}
+
 .form{
     display: flex;
 }

@@ -58,19 +58,33 @@
                         <p class="price">{{ $order->item->price }}</p>
                     </div>
                 </div>
+                
+                @foreach($messages as $message)
+                    @php
+                        $sender = $message->send_account_id
+                    @endphp
+                    <div class="chat">
+                        @if($sender != $account->id)
+                            <div class="partner">
+                                <div class="chat__account-partner">
+                                    <img src="{{ asset('storage/' . $message->sender->image) }}" alt="" class="partner-icon">
+                                    <p class="partner-name">{{ $message->sender->name }}</p>
+                                </div>
+                                <p class="partner-message">{{ $message->message }}</p>
+                            </div>
+                        @elseif($sender == $account->id)
+                            <div class="myself">
+                                <div class="chat__account-myself">
+                                    <p class="myself-name">{{ $message->sender->name }}</p>
+                                    <img src="{{ asset('storage/' . $message->sender->image) }}" alt="" class="myself-icon">
+                                </div>
+                                <p class="myself-message">{{ $message->message }}</p>
+                            </div>
+                        @endif
+                    </div>
+                @endforeach
 
-                <div class="chat">
-                    <div class="partner">
-                        <img src="" alt="" class="partner-icon">
-                        <p class="partner-name"></p>
-                        <p class="partner-message"></p>
-                    </div>
-                    <div class="myself">
-                        <img src="" alt="" class="myself-icon">
-                        <p class="myself-name"></p>
-                        <p class="myself-message"></p>
-                    </div>
-                </div>
+
                 <form action="/chat/send" method="post" class="form" id="form" enctype="multipart/form-data">
                     @csrf
                     <input type="text" name="order_id" value="{{ $order->id }}" hidden>
