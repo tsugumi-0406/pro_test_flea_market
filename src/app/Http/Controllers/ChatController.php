@@ -9,6 +9,7 @@ use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Account;
 use App\Models\Message;
+use App\Http\Requests\ChatRequest;
 
 class ChatController extends Controller
 {
@@ -48,7 +49,7 @@ class ChatController extends Controller
         return view('chat', compact('order', 'tradings', 'status'));
     }
 
-    public function send(Request $request){
+    public function send(ChatRequest $request){
         $user = Auth::user();
         $account = \App\Models\Account::where('user_id', $user->id)->first();
         $data = [];

@@ -81,6 +81,16 @@
                         <img class="form-button__image" src="{{ asset('storage/inputbutton.jpg') }}" alt="">
                     </button>
                 </form>
+                <div class="main-form__error">
+                    @error('message')
+                        {{ $errors->first('message') }}
+                    @enderror
+                </div>
+                <div class="main-form__error">
+                    @error('image')
+                        {{ $errors->first('image') }}
+                    @enderror
+                </div>
             </div>
         </div>
     </main>
