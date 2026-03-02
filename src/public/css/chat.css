@@ -82,6 +82,7 @@
 
 .myself{
     text-align: right;
+    margin-bottom: 15px;
 }
 
 .chat__account-partner{
@@ -108,9 +109,41 @@
     margin: auto 10px auto auto;
 }
 
-.partner-message, .myself-message{
+.partner-message{
     background-color: #D9D9D9;
     display: inline-block;
+}
+
+.myself-message {
+    background-color: #D9D9D9;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    border: none;
+    width: 400px;
+}
+
+.message-update{
+    margin: 0px 10px auto auto;
+    display: inline;
+}
+
+.message-update__button{
+    color: #5F5F5F;
+    background-color: #FFFFFF;
+    border: none;
+    margin: auto 0px auto auto;
+}
+
+.message-delete {
+    margin: 0px 0px auto 0px;
+    display: inline;
+}
+
+.message-delete__button{
+    color: #5F5F5F;
+    background-color: #FFFFFF;
+    border: none;
+    margin: auto 5px auto auto;
 }
 
 .form{

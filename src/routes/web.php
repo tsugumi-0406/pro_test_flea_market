@@ -78,5 +78,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/chat/{order_id}', [ChatController::class, 'chat']);
 
     Route::post('/chat/send', [ChatController::class, 'send']);
+
+    Route::post('/chat/update', [ChatController::class, 'update']);
+
+    Route::post('/chat/delete', [ChatController::class, 'delete']);
 });
 

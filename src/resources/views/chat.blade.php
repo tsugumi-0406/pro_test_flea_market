@@ -78,7 +78,30 @@
                                     <p class="myself-name">{{ $message->sender->name }}</p>
                                     <img src="{{ asset('storage/' . $message->sender->image) }}" alt="" class="myself-icon">
                                 </div>
-                                <p class="myself-message">{{ $message->message }}</p>
+                                <div class="message-form">
+                                    <form action="/chat/update" method="post" class="message-update" enctype="multipart/form-data">
+                                    @csrf
+                                        <input type="text" name="order_id" value="{{ $order->id }}" hidden>
+                                        <div>
+                                            <textarea type="text" class="myself-message" name="message">{{ $message->message }}</textarea>
+                                        </div>
+                                        <div>
+                                            @if($message->image != null)
+                                            <label for="image-update__{{ $message->id }}">
+                                                <img src="{{ asset('storage/' . $message->image) }}" alt="添付画像" class="product-card__content-image" name="image">
+                                            </label>
+                                            <input type="file" name="image" accept="image/*" hidden id="image-update__{{ $message->id }}"> 
+                                            @endif
+                                        </div>
+                                        <input type="text" value="{{ $message->id }}" name="message_id" hidden>
+                                        <button class="message-update__button">編集</button>
+                                    </form>
+                                    <form action="/chat/delete" method="post" class="message-delete" enctype="multipart/form-data">
+                                    @csrf
+                                        <input type="text" value="{{ $message->id }}" name="message_id" hidden>
+                                        <button class="message-delete__button">削除</button>
+                                    </form>
+                                </div>
                             </div>
                         @endif
                     </div>

@@ -75,4 +75,23 @@ class ChatController extends Controller
 
         return redirect('/chat/' . $request->order_id);
     }
+
+    // メッセージを編集する
+    public function update(Request $request)
+    {
+        $form = $request->only(['message', 'image']);
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('chat_image', 'public');
+            $form['image'] = $path;
+        }
+        
+        Message::where('id', $request->message_id)->update($form);
+
+        return redirect('/chat/' . $request->order_id);
+    }
+
+    // メッセージを削除する
+    public function delete(Request $request)
+    {}
 }
