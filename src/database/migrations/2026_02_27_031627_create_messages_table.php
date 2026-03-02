@@ -18,6 +18,7 @@ class CreateMessagesTable extends Migration
             $table->foreignId('order_id');
             $table->foreignId('send_account_id');
             $table->text('message');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -1,0 +1,112 @@
+.main-inner{
+    display: flex;
+}
+
+.side{
+    background-color: #868686;
+    width: 15%;
+}
+
+.side-title{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 30px;
+    margin: 10px 10px 30px 10px;
+}
+
+.side-link{
+    background-color: #EEEEEB;
+    margin: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+.side-link__name {
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.content{
+    width: 85%;
+}
+
+.title{
+    border-bottom: solid   #5F5F5F 2px;
+    height: 80px;
+    display: flex;
+}
+
+.title__user{
+    margin-top: 0px;
+}
+
+.form-tradingend{
+    margin: auto 20px auto auto;
+}
+
+.form-tradingend__button{
+    background-color: #FF8282;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 5px 20px;
+}
+
+.item{
+    border-bottom: solid #5F5F5F 2px;
+    display: flex;
+}
+
+.item-image{
+    width: 200px;
+    height: 200px;
+    margin: auto 50px auto 30px;
+}
+
+.item-name{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.price{
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.form{
+    display: flex;
+}
+
+.form__text{
+    margin-left: 10px;
+    border-radius: 4px;
+    width: 900px;
+    border: solid 1px #5F5F5F;
+}
+
+.form__input-image{
+    color: #FF5555;
+    border: solid 2px #FF5555;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 5px;
+    margin: auto 0px auto 10px;
+}
+
+.form__button{
+    background-color: #FFFFFF;
+    border: none;
+}
+
+.form-button__image{
+    width: 60px;
+    height: 40px;
+}

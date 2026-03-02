@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ChatController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -75,5 +76,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/items/{item_id}/like', [ItemController::class, 'like'])->name('like');
 
     Route::get('/chat/{order_id}', [ChatController::class, 'chat']);
+
+    Route::post('/chat/send', [ChatController::class, 'send']);
 });
 

@@ -27,8 +27,9 @@
     <div class="item-list" id="pageContent01">
         @foreach($items as $item)
             <div class="item-card">
-                <a href="/item/{$item_id}" class="item-link"></a>
-                <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像" class="img-content" width=100%/>
+                <a href="/item/{{ $item->id }}" class="item-link">
+                    <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像" class="img-content" width=100%/>
+                </a>
                 <p class="item-card__name">{{$item->name}}</p>
             </div>
         @endforeach
@@ -38,8 +39,9 @@
         <div class="item-list" id="pageContent02">
             @foreach($items as $item)
                 <div class="item-card">
-                    <a href="/item/{$item_id}" class="item-link"></a>
-                    <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像" class="img-content" width=100%/>
+                    <a href="/item/{{ $item->id }}" class="item-link">
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="商品画像" class="img-content" width=100%/>
+                    </a>
                     <p class="item-card__name">{{$item->name}}</p>
                 </div>
             @endforeach
@@ -50,8 +52,9 @@
         <div class="item-list" id="pageContent02">
             @foreach($trading as $order)
                 <div class="item-card">
-                    <a href="/chat/{$order_id}" class="item-link"></a>
-                    <img src="{{ asset('storage/' . $order->item->image) }}" alt="商品画像" class="img-content" width=100%/>
+                    <a href="/chat/{{ $order->id }}" class="item-link">
+                        <img src="{{ asset('storage/' . $order->item->image) }}" alt="商品画像" class="img-content" width=100%/>
+                    </a>
                     <p class="item-card__name">{{$order->item->name}}</p>
                     @if($order->unread_count > 0)
                         <span class="badge">
