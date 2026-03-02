@@ -99,6 +99,7 @@
                                     <form action="/chat/delete" method="post" class="message-delete" enctype="multipart/form-data">
                                     @csrf
                                         <input type="text" value="{{ $message->id }}" name="message_id" hidden>
+                                        <input type="text" name="order_id" value="{{ $order->id }}" hidden>
                                         <button class="message-delete__button">削除</button>
                                     </form>
                                 </div>

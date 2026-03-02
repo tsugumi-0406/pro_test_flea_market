@@ -93,5 +93,9 @@ class ChatController extends Controller
 
     // メッセージを削除する
     public function delete(Request $request)
-    {}
+    {
+        Message::where('id', $request->message_id)->delete();
+
+        return redirect('/chat/' . $request->order_id);
+    }
 }
