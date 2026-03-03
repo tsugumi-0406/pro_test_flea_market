@@ -82,5 +82,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/chat/update', [ChatController::class, 'update']);
 
     Route::post('/chat/delete', [ChatController::class, 'delete']);
+
+    Route::post('/assessment', [ChatController::class, 'assessment']);
 });
 

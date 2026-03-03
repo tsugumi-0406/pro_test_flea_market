@@ -9,10 +9,12 @@ use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Account;
 use App\Models\Message;
+use App\Models\Assessment;
 use App\Http\Requests\ChatRequest;
 
 class ChatController extends Controller
 {
+    // チャット画面を開く
     public function chat(Request $request, $order_id)
     {
         $now = CarbonImmutable::now();
@@ -52,7 +54,15 @@ class ChatController extends Controller
                 ->where('order_id', $order_id)
                 ->get();
         
-        return view('chat', compact('order', 'tradings', 'status', 'messages', 'account'));
+        $assessment = Assessment::where('order_id', $order_id)->first();
+        
+        $open_modal = false;
+
+        if ($status === 'seller' && $assessment) {
+            $open_modal = ($assessment->buyer_assessment === null);
+        }
+
+        return view('chat', compact('order', 'tradings', 'status', 'messages', 'account', 'open_modal'));
     }
 
     // メッセージを送信する
@@ -97,5 +107,35 @@ class ChatController extends Controller
         Message::where('id', $request->message_id)->delete();
 
         return redirect('/chat/' . $request->order_id);
+    }
+
+    // 評価をする
+    public function assessment(Request $request)
+    {
+        $user = Auth::user();
+        $account = \App\Models\Account::where('user_id', $user->id)->first();
+        $account_id = $account->id;
+        $order = Order::where('id', $request->order_id)->with('item')->first();
+        $order_account_id = $order->account_id;
+        $seller_account_id = $order->item->account_id;
+
+        $data = [];
+        // ログインアカウントが購入者の場合
+        if($account_id === $order_account_id){
+            $data['order_id'] = $request->order_id;
+            $data['buyer_assessment'] = null;
+            $data['seller_assessment'] = $request->assessment;
+
+            Assessment::create($data);
+
+        // ログインアカウントが出品者の場合
+        }elseif($account_id === $seller_account_id){
+            $assessment = Assessment::where('order_id', $request->order_id)->first();
+            $data = $request->assessment;
+
+            $assessment->update(['buyer_assessment' => $data]);
+        }
+
+        return redirect('/');
     }
 }

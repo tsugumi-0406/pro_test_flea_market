@@ -15,11 +15,9 @@ class CreateAssessmentsTable extends Migration
     {
         Schema::create('assessments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('account_id');
-            $table->string('assessment');
-            $table->foreignId('item_id');
-            $table->foreignId('evaluator_account_id');
-            $table->string('seller_assessment_status');
+            $table->foreignId('order_id');
+            $table->string('buyer_assessment')->nullable();
+            $table->string('seller_assessment');
             $table->timestamps();
         });
     }
