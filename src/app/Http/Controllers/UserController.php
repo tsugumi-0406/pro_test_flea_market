@@ -86,6 +86,7 @@ class UserController extends Controller
         }
         $unread_count = $unread_count_buy + $unread_count_sell;
 
+        // タグごとの表示の変更
         switch ($page) {
             case 'trading':
                 $trading = $trading_buy_orders
@@ -107,7 +108,52 @@ class UserController extends Controller
                 $trading = collect();
             break;
         }
-        return view('mypage', compact('items', 'page', 'account', 'trading', 'unread_count'));
+
+            // 評価の平均を求める
+            $done_buy_orders = Order::where('status', 'done')
+                            ->where('account_id', $account->id)
+                            ->with('assessment')->get();
+            $done_sell_orders = Order::where('status', 'done')
+                            ->whereHas('item', function ($q) use ($account){
+                                $q->where('account_id', $account->id);
+                            })
+                            ->with('assessment')->get();
+
+            $assessment_sum_buy = 0;
+            $assessment_count_buy = 0;
+            foreach($done_buy_orders as $done_buy_order){
+                if(!$done_buy_order->assessment){
+                }else{
+                    $assessment_buy = $done_buy_order->assessment->buyer_assessment;
+                    if(!$assessment_buy){
+                    }else{
+                        $assessment_sum_buy += $assessment_buy;
+                        $assessment_count_buy += 1;
+                    }
+                }
+            }
+
+            $assessment_sum_sell = 0;
+            $assessment_count_sell = 0;
+            foreach($done_sell_orders as $done_sell_order){
+                if(!$done_sell_order->assessment){
+                }else{
+                    $assessment_sell = $done_sell_order->assessment->seller_assessment;
+                    if(!$assessment_sell){
+                    }else{
+                        $assessment_sum_sell += $assessment_sell;
+                        $assessment_count_sell += 1;
+                    }
+                }
+            }
+
+            if($assessment_count_buy + $assessment_count_sell == 0){
+                $assessment_average = null;
+            }else{
+                $assessment_average = round(($assessment_sum_buy + $assessment_sum_sell) / ($assessment_count_buy + $assessment_count_sell), 0);
+            }
+
+        return view('mypage', compact('items', 'page', 'account', 'trading', 'unread_count', 'assessment_average'));
     }
 
     // プロフィール画面にアカウントテーブルにデータがあれば表示する

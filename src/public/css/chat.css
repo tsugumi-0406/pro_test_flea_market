@@ -49,7 +49,8 @@
     margin: auto 20px auto auto;
 }
 
-.form-tradingend__button{
+/* 取引終了ボタン */
+.open{
     background-color: #FF8282;
     border-radius: 30px;
     border: none;
@@ -57,6 +58,8 @@
     color: #FFFFFF;
     font-weight: 700;
     padding: 5px 20px;
+    margin: auto 10px auto auto;
+    text-decoration: none;
 }
 
 .item{
@@ -179,4 +182,83 @@
 
 .main-form__error{
     color: red;
+}
+
+
+
+
+
+/* ベース */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+}
+
+.modal:target {
+    display: block;
+}
+
+/* ダイアログ本体 */
+.modal .content {
+    position: absolute;
+    left: 800px;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 360px;
+    background: #FDFCE6;
+    border: solid 1px #000000;
+    border-radius: 15px;
+}
+
+.content__inner-title{
+    border-bottom: solid 1px #000000;
+}
+
+.modal__title{
+    font-weight: 400;
+    font-size: 35px;
+    margin: 10px auto 10px 20px;
+    
+}
+
+.modal__sentence{
+    color: #868686;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.assessment .star {
+    font-size: 34px;
+    cursor: pointer;
+    color: #D9D9D9;
+    /* 未選択はグレー */
+}
+
+.assessment .star.is-on {
+    color: #FFF048;
+    /* 選択は黄色 */
+}
+
+.assessment{
+    border-bottom: solid 1px #000000;
+}
+
+.star{
+    width: 100px;
+    height: 100px;
+    margin-left: 12px;
+    margin-bottom: 20px;
+}
+
+.modal__button-dassessment{
+    background-color: #FF8282;
+    color: #FFFFFF;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    display: block;
+    margin: 20px 20px auto auto;
 }

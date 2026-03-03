@@ -18,6 +18,7 @@
     display: flex;
     width: 40%;
     justify-content: space-between;
+    align-items: center;
 }
 
 .mypage__image{
@@ -30,6 +31,18 @@
 .mypage__user-name{
     font-weight: 700;
     font-size: 35px;
+}
+
+.star-on{
+    color: #FFF048;
+    width: 40px;
+    height: 40px;
+}
+
+.star{
+    color: #D9D9D9;
+    width: 40px;
+    height: 40px;
 }
 
 .mypage__link {

@@ -2,13 +2,27 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/mypage.css') }}" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 @endsection
 
 @section('content')
     <div class="mypage">
         <div class="mypage-inner">
             <img src="{{ asset('storage/' . $account->image) }}" alt="プロフィール画像" class="mypage__image" width="100px" height="100px">
-            <p class="mypage__user-name">{{$account->name}}</p>
+            <div class="mypage__name-assessment">
+                <p class="mypage__user-name">{{$account->name}}</p>
+                @if($assessment_average !== null)
+                    @for($i = 1; $i <= 5; $i++)
+                        @if($i <= $assessment_average)
+                            <ion-icon class="star-on" name="star"></ion-icon>
+                        @else
+                            <ion-icon class="star" name="star"></ion-icon>
+                        @endif
+                    @endfor
+                @else
+                @endif
+            </div>
         </div>
         <a href="/mypage/profile" class="mypage__link">プロフィールを編集</a>
     </div>

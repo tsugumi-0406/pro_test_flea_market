@@ -1,20 +1,20 @@
 const likeBtns = document.querySelectorAll(".like-btn");
 
-likeBtns.forEach((likeBtn) => {
-    likeBtn.addEventListener("click", async (e) => {
-        const icon = e.currentTarget; 
+    likeBtns.forEach((likeBtn) => {
+        likeBtn.addEventListener("click", async (e) => {
+            const icon = e.currentTarget; 
 
-        const item_id = icon.dataset.itemId;
+            const item_id = icon.dataset.itemId;
 
-        await fetch(`/items/${item_id}/like`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRF-TOKEN": document
-                    .querySelector('meta[name="csrf-token"]')
-                    .getAttribute("content"),
-            },
-        })
+            await fetch(`/items/${item_id}/like`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": document
+                        .querySelector('meta[name="csrf-token"]')
+                        .getAttribute("content"),
+                },
+            })
             .then((res) => res.json())
             .then((data) => {
                 // いいね数更新
