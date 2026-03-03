@@ -71,7 +71,7 @@
                                     <input type="hidden" name="assessment" id="assessmentValue" value="0">
                                     <input type="text" name="order_id" value="{{ $order->id }}" hidden>
                                     <div class="modal__button">
-                                        <button class="modal__button-delete">送信する</button>
+                                        <button class="modal__button-dassessment">送信する</button>
                                     </div>
                                 </form>
                             </div>

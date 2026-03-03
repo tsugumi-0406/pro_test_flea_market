@@ -134,6 +134,8 @@ class ChatController extends Controller
             $data = $request->assessment;
 
             $assessment->update(['buyer_assessment' => $data]);
+
+            Order::where('id', $request->order_id)->update(['status' => 'done']);
         }
 
         return redirect('/');

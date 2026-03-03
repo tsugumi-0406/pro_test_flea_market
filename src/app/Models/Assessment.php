@@ -9,4 +9,8 @@ class Assessment extends Model
 {
     use HasFactory;
     protected $fillable = ['order_id', 'buyer_assessment', 'seller_assessment'];
+
+    public function order() {
+        return $this->hasOne(Order::class);
+    }
 }

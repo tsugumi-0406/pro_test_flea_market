@@ -19,4 +19,8 @@ class Order extends Model
     {
         return $this->belongsTo(Account::class);
     }
+
+    public function assessment() {
+        return $this->hasOne(Assessment::class);
+    }
 }

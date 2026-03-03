@@ -203,7 +203,7 @@
 .modal .content {
     position: absolute;
     left: 800px;
-    top: 580px;
+    top: 40%;
     transform: translate(-50%, -50%);
     width: 600px;
     height: 360px;
@@ -239,4 +239,26 @@
 .assessment .star.is-on {
     color: #FFF048;
     /* 選択は黄色 */
+}
+
+.assessment{
+    border-bottom: solid 1px #000000;
+}
+
+.star{
+    width: 100px;
+    height: 100px;
+    margin-left: 12px;
+    margin-bottom: 20px;
+}
+
+.modal__button-dassessment{
+    background-color: #FF8282;
+    color: #FFFFFF;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    display: block;
+    margin: 20px 20px auto auto;
 }
