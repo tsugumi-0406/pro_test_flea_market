@@ -70,6 +70,7 @@ class ChatController extends Controller
 
     // メッセージを送信する
     public function send(ChatRequest $request){
+        $now = CarbonImmutable::now();
         $user = Auth::user();
         $account = \App\Models\Account::where('user_id', $user->id)->first();
         $data = [];
@@ -85,6 +86,10 @@ class ChatController extends Controller
         }
 
         Message::create($data);
+
+        Order::where('id', $request->order_id)->update([
+            'last_message_at' => $now,
+        ]);
 
         return redirect('/chat/' . $request->order_id);
     }

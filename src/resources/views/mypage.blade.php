@@ -81,4 +81,12 @@
     @endauth
 @endif
 
+<script>
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      location.reload();
+    }
+  });
+</script>
+
 @endsection

@@ -147,6 +147,8 @@
     font-size: 20px;
     font-weight: 700;
     padding: 10px 20px;
+    max-width: 100%;
+        line-height: 1.5;
 }
 
 .message-update{
