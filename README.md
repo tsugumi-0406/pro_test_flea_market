@@ -57,6 +57,6 @@ db:seedで作成されます。
 
 
 ## ER図
-![ER図](index.drawio.png)
+![ER図](src/index.drawio.png)
 
 # pro_test_flea_market
