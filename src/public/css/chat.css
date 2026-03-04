@@ -37,12 +37,18 @@
 
 .title{
     border-bottom: solid   #5F5F5F 2px;
-    height: 80px;
     display: flex;
 }
 
+.title-icon{
+    border-radius: 50%;
+    margin: 10px 10px 10px 25px;
+    width: 70px;
+    height: 70px;
+}
+
 .title__user{
-    margin-top: 0px;
+    margin: auto 0px;
 }
 
 .form-tradingend{
@@ -90,16 +96,19 @@
 
 .chat__account-partner{
     display: flex;
+    margin-top: 10px;
 }
 
 .chat__account-myself {
     display: flex;
+    margin-top: 10px;
 }
 
 .partner-icon{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    margin-left: 10px;
 }
 
 .myself-icon {
@@ -108,13 +117,25 @@
     border-radius: 50%;
     margin: auto 10px auto 0px;
 }
+
+.partner-name{
+    font-weight: 700;
+}
+
 .myself-name {
     margin: auto 10px auto auto;
+    font-weight: 700;
 }
 
 .partner-message{
     background-color: #D9D9D9;
     display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-top: 0px;
+    width: 400px;
 }
 
 .myself-message {
@@ -123,6 +144,9 @@
     margin-right: 10px;
     border: none;
     width: 400px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 20px;
 }
 
 .message-update{
@@ -151,13 +175,17 @@
 
 .form{
     display: flex;
+    margin-top: 20px;
 }
 
 .form__text{
     margin-left: 10px;
     border-radius: 4px;
     width: 900px;
+    height: 44px;
+    font-size: 20px;
     border: solid 1px #5F5F5F;
+    padding: 10px;
 }
 
 .form__input-image{

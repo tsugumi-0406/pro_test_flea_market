@@ -50,8 +50,8 @@ class UserController extends Controller
                             $q->where('account_id', $account->id);
                         })
                         ->with('item')->get();
-        $unread_count_buy = 0;
         // 購入した場合の未読メッセージ数
+        $unread_count_buy = 0;
         foreach($trading_buy_orders as $trading_buy_order){
             $otherId = $trading_buy_order->item->account_id;
             if($trading_buy_order->buyer_last_read_at === null){
@@ -67,8 +67,9 @@ class UserController extends Controller
             $trading_buy_order->unread_count = $message_buy;
             $unread_count_buy += $message_buy;
         }
-        $unread_count_sell = 0;
+
         // 販売した場合の未読メッセージ数
+        $unread_count_sell = 0;
         foreach($trading_sell_orders as $trading_sell_order){
             $otherId = $trading_sell_order->account_id;
             if($trading_sell_order->seller_last_read_at === null){

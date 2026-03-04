@@ -28,5 +28,9 @@ class Account extends Model
     public function messages() {
         return $this->hasMany(Like::class, 'account_id');
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
     
