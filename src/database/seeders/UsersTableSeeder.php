@@ -30,7 +30,7 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'テスト3',
                 'email' => 'ccc@gmail.com',
-                'password' => Hash::make('password1'),
+                'password' => Hash::make('password3'),
             ],
         ]) ;
     }
