@@ -38,20 +38,20 @@ Laravel 環境構築
 php artisan config:clear<br>
 php artisan cache:clear<br>
 
-登録されているユーザーの情報
-ユーザー名 : テスト1
-メールアドレス：aaa@gmail.com
-パスワード：password1
-CO01～CO05を出品している
+登録されているユーザーの情報<br>
+ユーザー名 : テスト1<br>
+メールアドレス：aaa@gmail.com<br>
+パスワード：password1<br>
+CO01～CO05を出品している<br>
 
-ユーザー名 : テスト2
-メールアドレス：bbb@gmail.com
-パスワード：password2
-CO06～CO010を出品している
+ユーザー名 : テスト2<br>
+メールアドレス：bbb@gmail.com<br>
+パスワード：password2<br>
+CO06～CO010を出品している<br>
 
-ユーザー名 : テスト3
-メールアドレス：ccc@gmail.com
-パスワード：password3
+ユーザー名 : テスト3<br>
+メールアドレス：ccc@gmail.com<br>
+パスワード：password3<br>
 
 db:seedで作成されます。
 
