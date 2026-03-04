@@ -3,7 +3,7 @@
 ## 環境構築
 
 Dockerビルド
-1. git clone https://github.com/tsugumi-0406/flea_market<br>
+1. git clone https://github.com/tsugumi-0406/pro_test_flea_market<br>
 2. cd flea_market<br>
 2. docker-compose up -d --build
 
