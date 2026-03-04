@@ -11,6 +11,9 @@ use App\Models\Account;
 use App\Models\Message;
 use App\Models\Assessment;
 use App\Http\Requests\ChatRequest;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TransactionCompletedMail;
+
 
 class ChatController extends Controller
 {
@@ -127,6 +130,11 @@ class ChatController extends Controller
             $data['seller_assessment'] = $request->assessment;
 
             Assessment::create($data);
+
+            // 通知メールの送信
+            $seller_address = $order->item->account->user->email;
+
+            Mail::to($seller_address)->send(new TransactionCompletedMail($order));
 
         // ログインアカウントが出品者の場合
         }elseif($account_id === $seller_account_id){

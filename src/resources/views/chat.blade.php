@@ -18,7 +18,7 @@
         <img src="{{ asset('storage/logo.svg') }}" alt="アプリロゴ" class="header__logo">
     </header>
 
-    <main>
+    <main class="main">
         <!-- サイドバー -->
         <div class="main-inner">
             <div class="side">
@@ -36,7 +36,7 @@
             <!-- 取引相手の表示 -->
             <div class="content">
                 <div class="title">
-                    <img src="" alt="" class="title-icon">
+                    <img src="{{ asset('storage/' . $order->item->account->image) }}" alt="アイコン" class="title-icon">
                     @if($status == 'buyer')
                         <h1 class="title__user">
                             「{{ $order->item->account->name }}」さんとの取引画面
