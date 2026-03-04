@@ -4,6 +4,7 @@
 
 Dockerビルド
 1. git clone https://github.com/tsugumi-0406/flea_market<br>
+2. cd flea_market<br>
 2. docker-compose up -d --build
 
 Laravel 環境構築
@@ -14,6 +15,10 @@ Laravel 環境構築
 5. php artisan migrate
 6. php artisan db:seed
 7. php artisan storage:link
+8. exit
+9. docker-compose exec mysql mysql -uroot -p
+10. root
+11. CREATE DATABASE demo_test;
 
  
 ## URL
@@ -27,6 +32,28 @@ Laravel 環境構築
 ・Laravel 8.83.29<br>
 ・MySQL 8.0.26<br>
 ・nginx:1.21.1
+
+## その他
+環境変数を変更した場合（APP_URL 等）は、以下を実行してください。<br>
+php artisan config:clear<br>
+php artisan cache:clear<br>
+
+登録されているユーザーの情報
+ユーザー名 : テスト1
+メールアドレス：aaa@gmail.com
+パスワード：password1
+CO01～CO05を出品している
+
+ユーザー名 : テスト2
+メールアドレス：bbb@gmail.com
+パスワード：password2
+CO06～CO010を出品している
+
+ユーザー名 : テスト3
+メールアドレス：ccc@gmail.com
+パスワード：password3
+
+db:seedで作成されます。
 
 
 ## ER図
