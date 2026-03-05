@@ -41,10 +41,11 @@ src/storage/*
 !src/storage/app/public/logo.svg
 !src/storage/app/public/inputbutton.jpg
 !src/storage/app/public/item_image/
+!src/storage/app/public/account_image/
 
 # ユーザー生成物は無視（増えるのでGitに入れない）
 src/storage/app/public/chat_image/
-src/storage/app/public/account_image/
+
 
 # WindowsのZone.Identifierは無視
 *:Zone.Identifier
