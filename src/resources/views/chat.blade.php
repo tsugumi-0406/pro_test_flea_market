@@ -107,6 +107,14 @@
                                     <p class="partner-name">{{ $message->sender->name }}</p>
                                 </div>
                                 <p class="partner-message">{{ $message->message }}</p>
+                                <div>
+                                    @if($message->image != null)
+                                        <label for="image-update__{{ $message->id }}">
+                                            <img src="{{ asset('storage/' . $message->image) }}" alt="添付画像" class="product-card__content-image" name="image">
+                                        </label>
+                                        <input type="file" name="image" accept="image/*" hidden id="image-update__{{ $message->id }}"> 
+                                    @endif
+                                </div>
                             </div>
                         @elseif($sender == $account->id)
                             <div class="myself">
