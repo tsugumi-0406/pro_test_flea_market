@@ -9,16 +9,19 @@ Dockerビルド
 
 Laravel 環境構築
 1. docker-compose exec php bash
-2. composer install
-3. .env.example ファイルから.envを作成する
-4. php artisan key:generate
-5. php artisan migrate
-6. php artisan db:seed
-7. php artisan storage:link
-8. exit
-9. docker-compose exec mysql mysql -uroot -p
-10. root
-11. CREATE DATABASE demo_test;
+2. cp .env.example .env
+3. mkdir -p storage/framework/{cache,data,sessions,views} bootstrap/cache
+4. chmod -R 775 storage bootstrap/cache
+5. composer install --no-scripts
+6. composer install --no-scripts
+7. php artisan key:generate
+8. php artisan migrate
+9. php artisan db:seed
+10. php artisan storage:link
+11. exit
+12. docker-compose exec mysql mysql -uroot -p
+13. root
+14. CREATE DATABASE demo_test;
 
  
 ## URL
