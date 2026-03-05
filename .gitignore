@@ -28,5 +28,23 @@ docker/mysql/dump/
 # Laravel
 src/.env
 src/.env.testing
-src/storage/
 src/vendor/
+
+# storage (基本は無視)
+src/storage/*
+
+# ただし固定アセットだけ許可
+!src/storage/app/
+!src/storage/app/public/
+!src/storage/app/public/.gitkeep
+!src/storage/app/public/.gitignore
+!src/storage/app/public/logo.svg
+!src/storage/app/public/inputbutton.jpg
+!src/storage/app/public/item_image/
+
+# ユーザー生成物は無視（増えるのでGitに入れない）
+src/storage/app/public/chat_image/
+src/storage/app/public/account_image/
+
+# WindowsのZone.Identifierは無視
+*:Zone.Identifier
